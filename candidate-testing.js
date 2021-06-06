@@ -34,7 +34,7 @@ function askQuestion() {
   }
 }
 
-function gradeQuiz(candidateAnswers) {
+function gradeQuiz() {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 /*if (candidateAnswer === correctAnswer) {
@@ -60,7 +60,7 @@ function runProgram() {
   // TODO 1.1c: Ask for candidate's name //
   console.log(`Welcome ${candidateName}!`)
   askQuestion();
-  gradeQuiz(this.candidateAnswers);
+  gradeQuiz();
 }
 
 // Don't write any code below this line //
