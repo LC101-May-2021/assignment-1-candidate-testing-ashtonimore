@@ -43,10 +43,10 @@ function gradeQuiz(candidateAnswers) {
       console.log("That's incorrect.");
 }*/
 
-  let grade = rightAnswers/5*100;
+  let grade = rightAnswers/5;
   
-console.log(`Your score: ${grade}% (${rightAnswers}/5)`);
-  if (grade >= 80){
+console.log(`Your score: ${grade*100}% (${rightAnswers}/5)`);
+  if (grade >= .8){
     console.log("You passed. Hooray!");
   } else {console.log("You failed. Please try again.");
 
