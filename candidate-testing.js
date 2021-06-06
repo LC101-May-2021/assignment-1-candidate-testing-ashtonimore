@@ -33,8 +33,8 @@ function askQuestion() {
       }
   }
 }
-
-function gradeQuiz() {
+let grade = 0
+function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 /*if (candidateAnswer === correctAnswer) {
@@ -43,24 +43,26 @@ function gradeQuiz() {
       console.log("That's incorrect.");
 }*/
 
-  let grade = rightAnswers/5;
   
-console.log(`Your score: ${grade*100}% (${rightAnswers}/5)`);
-  if (grade >= .8){
+  grade = rightAnswers/5*100;
+  console.log(`Your score: ${grade}% (${rightAnswers}/5)`);
+  if (grade >= 80){
     console.log("You passed. Hooray!");
   } else {console.log("You failed. Please try again.");
-
+      
   }
   return grade;
   
+  
 }
-
+//console.log(grade)
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  console.log(`Welcome ${candidateName}!`)
+  console.log(`Welcome ${candidateName}!console.log(grade)`)
   askQuestion();
-  gradeQuiz();
+  gradeQuiz(this.candidateAnswers);
+  
 }
 
 // Don't write any code below this line //
