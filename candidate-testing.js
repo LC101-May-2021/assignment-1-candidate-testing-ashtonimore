@@ -32,7 +32,7 @@ function askQuestion() {
   }
 
 
-let grade = 0
+
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
@@ -41,8 +41,9 @@ function gradeQuiz(candidateAnswers) {
 }   else {
       console.log("That's incorrect.");
 }*/
+let grade = 0;
 for (let i = 0; i < candidateAnswers.length; i++){
-  if (candidateAnswers[i] === correctAnswers[i]) {
+  if (candidateAnswers[i].toUpperCase() === correctAnswers[i].toUpperCase()) {
       rightAnswers = rightAnswers + 1;
       } else {
         wrongAnswers = wrongAnswers + 1;
