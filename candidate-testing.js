@@ -18,8 +18,7 @@ candidateName = input.question("What is your name? ");
  console.log(`Welcome ${candidateName}!`);
 }
 // console.log(questions[0])
-let rightAnswers = 0;
-let wrongAnswers = 0;
+
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
@@ -34,7 +33,8 @@ function askQuestion() {
 
 
 function gradeQuiz(candidateAnswers) {
-
+let rightAnswers = 0;
+let wrongAnswers = 0;
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 /*if (candidateAnswer === correctAnswer) {
   console.log("That's correct!");
