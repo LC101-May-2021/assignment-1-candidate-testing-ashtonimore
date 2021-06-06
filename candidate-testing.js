@@ -10,7 +10,7 @@ let correctAnswer = "Sally Ride";
 let candidateAnswer = ("");
 let questions = [ 'Who was the first American woman in space? ', 'True or false: 5 kilometer == 5000 meters? ', '(5 + 3)/2 * 10 = ? ', 'Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2? ', 'What is the minimum crew size for the ISS? ' ];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
-let candidateAnswers = '';
+let candidateAnswers = [];
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
@@ -24,16 +24,14 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
   for (let i = 0; i < questions.length; i++) {
-  candidateAnswers = input.question(`${i + 1}) ${questions[i]}`)
-    if (candidateAnswers === correctAnswers[i]) {
-      rightAnswers = rightAnswers + 1;
-      console.log(`Your answer: ${candidateAnswers} \nCorrect Answer: ${correctAnswers[i]}`);
-      } else {
-        wrongAnswers = wrongAnswers + 1;
-        (console.log(`Your answer: ${candidateAnswers} \nCorrect Answer: ${correctAnswers[i]}`));
+  candidateAnswers[i] = input.question(`${i + 1}) ${questions[i]}`)
+    
+      console.log(`Your answer: ${candidateAnswers[i]} \nCorrect Answer: ${correctAnswers[i]}`);
+      
       }
   }
-}
+
+
 let grade = 0
 function gradeQuiz(candidateAnswers) {
 
@@ -43,8 +41,13 @@ function gradeQuiz(candidateAnswers) {
 }   else {
       console.log("That's incorrect.");
 }*/
-
-  
+for (let i = 0; i < candidateAnswers.length; i++){
+  if (candidateAnswers[i] === correctAnswers[i]) {
+      rightAnswers = rightAnswers + 1;
+      } else {
+        wrongAnswers = wrongAnswers + 1;
+      }
+}
   grade = rightAnswers/5*100;
   console.log(`Your score: ${grade}% (${rightAnswers}/5)`);
   if (grade >= 80){
