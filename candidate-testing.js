@@ -8,24 +8,28 @@ let candidateName = ('');
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = ("");
-let questions = ['Who was the first American woman in space? ', 'True or false: 5 kilometer == 5000 meters? ', '(5 + 3)/2 * 10 = ? ', 'Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2? ', 'What is the minimum crew size for the ISS? '];
+let questions = ['1) Who was the first American woman in space? ', '2) True or false: 5 kilometer == 5000 meters? ', '3) (5 + 3)/2 * 10 = ? ', '4) Given the array [8, "Orbit", "Trajectory", 45], what entry is at index 2? ', '5) What is the minimum crew size for the ISS? '];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = '';
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-candidateName = input.question("What is your name? ")
+candidateName = input.question("What is your name? ");
 }
 // console.log(questions[0])
+let rightAnswers = 0;
+let wrongAnswers = 0;
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
 
   for (let i = 0; i < questions.length; i++) {
   candidateAnswers = input.question(questions[i])
     if (candidateAnswers === correctAnswers[i]) {
-      console.log(`You said ${candidateAnswers} and the correct answer was ${correctAnswers[i]}. Congrats!`);
+      rightAnswers = rightAnswers + 1;
+      console.log(`Your answer: ${candidateAnswers} \nCorrect Answer: ${correctAnswers[i]}`);
       } else {
-        (console.log(`You said ${candidateAnswers} and the correct answer was ${correctAnswers[i]}. Try again!`));
+        wrongAnswers = wrongAnswers + 1;
+        (console.log(`Your answer: ${candidateAnswers} \nCorrect Answer: ${correctAnswers[i]}`));
       }
   }
 }
@@ -39,10 +43,16 @@ function gradeQuiz(candidateAnswers) {
       console.log("That's incorrect.");
 }*/
 
-  let grade;
+  let grade = rightAnswers/5*100;
   
+console.log(`Your score: ${grade}% (${rightAnswers}/5)`);
+  if (grade >= 80){
+    console.log("You passed. Hooray!");
+  } else {console.log("You failed. Please try again.");
 
+  }
   return grade;
+  
 }
 
 function runProgram() {
